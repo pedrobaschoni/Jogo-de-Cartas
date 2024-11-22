@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Jogo de Cartas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <p>Vitórias Jogador 1: {{vitoriasJogador1}}</p>
+  <p>Vitórias Jogador 2: {{vitoriasJogador2}}</p>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Jogador 1</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img alt="Cartas do Jogador 1" [src]="carta.image" *ngFor="let carta of cartasJogador1" />
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Jogador 2</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img alt="Cartas do Jogador 2" [src]="carta.image" *ngFor="let carta of cartasJogador2" />
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" (click)="sortearCartas()">Embaralhar</ion-button>
+
+  <p>Pontos Jogador 1: {{pontosJogador1}}</p>
+  <p>Pontos Jogador 2: {{pontosJogador2}}</p>
+
+  <p>{{ mensagem }}</p>
+
+</ion-content>
